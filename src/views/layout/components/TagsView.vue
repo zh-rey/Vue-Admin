@@ -186,11 +186,13 @@ export default {
       position: absolute;
       top: 0;
       bottom: 0;
-      right: 0;
-      width: 10px;
+      right: 1px;
+      margin: auto 0;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
       text-align: center;
-      line-height: 24px;
-      font-size: 10px;
+      line-height: 12px;
       &:hover {
         background-color: #F56C6C;
         color: #fff;
