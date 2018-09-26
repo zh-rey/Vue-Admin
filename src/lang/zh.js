@@ -1,10 +1,13 @@
 export default {
   route: {
     Home: '首页',
-    Example: '示例'
+    Example: '示例',
+    Table: '表格',
+    Tree: '树形菜单',
+    Form: '表单'
   },
   navbar: {
-    logOut: '退出登录',
+    logOut: '退出',
     dashboard: '首页',
     theme: '换肤',
     lang: '语言切换'

@@ -1,9 +1,13 @@
 export default {
   route: {
-    Home: 'Home'
+    Home: 'Home',
+    Example: 'Example',
+    Table: 'Table',
+    Tree: 'Tree',
+    Form: 'Form'
   },
   navbar: {
-    logOut: 'Log Out',
+    logOut: 'LogOut',
     dashboard: 'Home',
     theme: 'Theme',
     lang: 'Switch language success'
