@@ -1,18 +1,12 @@
 <template>
   <div class="avatar-container">
-    <el-dropdown class="avater-list" trigger="click" placement="bottom">
+    <el-dropdown class="avater-list" trigger="click" placement="bottom" @command="hamburgerCommand">
       <div class="list-btn">
         <img class="user-avatar" :src="avatar+'?imageView2/1/w/40/h/40'">
       </div>
-      <el-dropdown-menu class="user-dropdown" slot="dropdown">
-        <router-link class="inlineBlock" to="/">
-          <el-dropdown-item>
-            Home
-          </el-dropdown-item>
-        </router-link>
-        <el-dropdown-item divided>
-          <span @click="logout" style="display:block;">LogOut</span>
-        </el-dropdown-item>
+      <el-dropdown-menu class="user-dropdown" slot="dropdown" style="text-align:center">
+        <el-dropdown-item command="linkHome">{{$t('navbar.dashboard')}}</el-dropdown-item>
+        <el-dropdown-item divided command="logout">{{$t('navbar.logOut')}}</el-dropdown-item>
       </el-dropdown-menu>
     </el-dropdown>
     <el-tooltip effect="dark" :content="$t('navbar.lang')" placement="bottom">
@@ -47,6 +41,18 @@ export default {
       this.$store.dispatch('LogOut').then(() => {
         location.reload() // 为了重新实例化vue-router对象 避免bug
       })
+    },
+    hamburgerCommand(command) {
+      switch (command) {
+        case 'linkHome':
+          this.$router.push({ path: '/' })
+          break
+        case 'logout':
+          this.$store.dispatch('LogOut').then(() => {
+            location.reload() // 为了重新实例化vue-router对象 避免bug
+          })
+          break
+      }
     },
     handleSetLanguage(lang) {
       this.$i18n.locale = lang

@@ -72,7 +72,7 @@ export const constantRouterMap = [
     ]
   },
 
-  {
+  /* {
     path: '/nested',
     component: Layout,
     redirect: '/nested/menu1',
@@ -128,7 +128,7 @@ export const constantRouterMap = [
         meta: { title: 'menu2' }
       }
     ]
-  },
+  }, */
 
   { path: '*', redirect: '/404', hidden: true }
 ]
